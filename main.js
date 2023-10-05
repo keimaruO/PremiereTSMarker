@@ -1,22 +1,26 @@
-//タイムコードのテキストファイルの行ごとに配列に挿入
-var mytextArray =[]; 
+// Array to store timestamps and comments
+var mytextArray = []; 
 
-//テキストファイルを行ごとに読み込み
+// Read the text file line by line
 function readtext(){
-var fileDirectory = File.openDialog("Select Text file","");
-var myFile = new File(fileDirectory);
+    var fileDirectory = File.openDialog("Select Text file","");
+    var myFile = new File(fileDirectory);
     if (myFile.open("r")){
-        var myText = "";
         while(!myFile.eof){
-            mytextArray.push(myFile.readln())
+            var line = myFile.readln();
+            var parts = line.split(" "); // Splitting by space to separate timestamp and comment
+            if (parts.length >= 2) {
+                mytextArray.push({
+                    timestamp: parts[0],
+                    comment: parts.slice(1).join(" ") // Joining the rest of the parts to form the comment
+                });
+            }
         }
     }
-myFile.close();
+    myFile.close();
 }
 
-//タイムコードのテキストファイルを秒数に変換
-//ちなみにテキストファイルのタイムコードはフレームは無しで00:00:00 or 00:00のように時間：分：秒で格納されている
-
+// Convert timecode to seconds
 function timecodeToSecond(timeString){
     var timeArray = timeString.split(":");
     var hours = 0, minutes = 0, seconds = 0;
@@ -31,15 +35,20 @@ function timecodeToSecond(timeString){
         seconds = parseInt(timeArray[0]);
     }
     
-    return hours+minutes+seconds;
+    return hours + minutes + seconds;
 }
 
-//とりまテキストファイルを配列に入れる関数を実行
-readtext()
+// Read the text file
+readtext();
 
-//あとは配列の分だけマーカー作成を実行
-//CREATE NEW MARKERS
+// Create markers for each timestamp and comment
 for (var i=0; i < mytextArray.length ; i++ ){
     var markers = app.project.activeSequence.markers;
-    var newMark = markers.createMarker(timecodeToSecond(mytextArray[i]));
+    var newMark = markers.createMarker(timecodeToSecond(mytextArray[i].timestamp));
+    newMark.name = mytextArray[i].comment; // Set the marker's name or comment to the comment from the text file
+    newMark.comments = mytextArray[i].timestamp; // Set the marker's comments to the timestamp for display on hover
+
+    // Assign different colors to the markers
+    var colors = ["magenta", "cyan", "yellow", "green", "blue", "red"];
+    newMark.color = colors[i % colors.length];
 }
