@@ -16,13 +16,13 @@ Visual Studio Codeの拡張機能、[ExtendScript Debugger](https://marketplace.
 2. ドロップダウンメニューから「Download ZIP」を選択
 3. プロジェクトのZIPファイルがダウンロードされファイルを解凍したら完了
 
-## ダウンロードしたフォルダをVisual Studio Codeで開く
+## 解凍したフォルダをVisual Studio Codeで開く
 
 
 ![3](https://github.com/keimaruO/PremiereTSMarker/assets/91080250/b1bdc273-1e5c-43e3-91d2-d6b65c9f55e5)
 
 
-1. 解答したフォルダをつかんでドラッグアンドドロップ
+1. 解答したフォルダをつかんでVisual Studio Codeにドラッグアンドドロップ
 
 ## ExtendScriptを実行する
 
