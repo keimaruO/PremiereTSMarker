@@ -1,18 +1,17 @@
-// Array to store timestamps and comments
 var mytextArray = []; 
 
-// Read the text file line by line
+// テキストファイルを一行ずつ読み
 function readtext(){
     var fileDirectory = File.openDialog("Select Text file","");
     var myFile = new File(fileDirectory);
     if (myFile.open("r")){
         while(!myFile.eof){
             var line = myFile.readln();
-            var parts = line.split(" "); // Splitting by space to separate timestamp and comment
+            var parts = line.split(" ");
             if (parts.length >= 2) {
                 mytextArray.push({
                     timestamp: parts[0],
-                    comment: parts.slice(1).join(" ") // Joining the rest of the parts to form the comment
+                    comment: parts.slice(1).join(" ")
                 });
             }
         }
@@ -20,7 +19,7 @@ function readtext(){
     myFile.close();
 }
 
-// Convert timecode to seconds
+// タイムコードを秒に変換
 function timecodeToSecond(timeString){
     var timeArray = timeString.split(":");
     var hours = 0, minutes = 0, seconds = 0;
@@ -38,17 +37,17 @@ function timecodeToSecond(timeString){
     return hours + minutes + seconds;
 }
 
-// Read the text file
+// テキストファイルを読みこ
 readtext();
 
-// Create markers for each timestamp and comment
+// マーカー作成
 for (var i=0; i < mytextArray.length ; i++ ){
     var markers = app.project.activeSequence.markers;
     var newMark = markers.createMarker(timecodeToSecond(mytextArray[i].timestamp));
-    newMark.name = mytextArray[i].comment; // Set the marker's name or comment to the comment from the text file
-    newMark.comments = mytextArray[i].timestamp; // Set the marker's comments to the timestamp for display on hover
+    newMark.name = mytextArray[i].comment;
+    newMark.comments = mytextArray[i].timestamp; // マウスでフォーカスするとコメント表示
 
-    // Assign different colors to the markers
-    var colors = ["magenta", "cyan", "yellow", "green", "blue", "red"];
-    newMark.color = colors[i % colors.length];
+    // マーカーごとに異なる色を割り当て
+    var colorIndices = [0, 1, 2, 3, 4, 5, 6, 7]; // 0 = Green, 1 = Red, 2 = Purple, 3 = Orange, 4 = Yellow, 5 = White, 6 = Blue, 7 = Cyan
+    newMark.setColorByIndex(colorIndices[i % colorIndices.length], i);
 }
