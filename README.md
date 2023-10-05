@@ -17,7 +17,8 @@ Visual Studio Codeの拡張機能、[ExtendScript Debugger](https://marketplace.
 
 ## ダウンロードしたフォルダをVisual Studio Codeで開く
 
-![3](https://github.com/keimaruO/PremiereTSMarker/assets/91080250/27bc2701-c2bb-4535-bc74-4313444a417b)
+![3](https://github.com/keimaruO/PremiereTSMarker/assets/91080250/d3c06629-1f65-4be6-9ab7-cb0bcc13392f)
+
 
 1. 解答したフォルダをつかんでドラッグアンドドロップ
 
