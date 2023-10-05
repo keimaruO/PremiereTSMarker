@@ -11,16 +11,16 @@ Visual Studio Codeの拡張機能、[ExtendScript Debugger](https://marketplace.
 
 ![2](https://github.com/keimaruO/PremiereTSMarker/assets/91080250/a861b5c7-70a1-4ddf-baf4-c1f89466bec1)
 
-今開いてるこのページの右上にある「<>Code」ボタンをクリック
-ドロップダウンメニューから「Download ZIP」を選択
-プロジェクトのZIPファイルがダウンロードされファイルを解凍したら完了
+1. 今開いてるこのページの右上にある「<>Code」ボタンをクリック
+2. ドロップダウンメニューから「Download ZIP」を選択
+3. プロジェクトのZIPファイルがダウンロードされファイルを解凍したら完了
 
-## 次にダウンロードしたフォルダをVisual Studio Codeで開きます
+## ダウンロードしたフォルダをVisual Studio Codeで開く
 
 ![3](https://github.com/keimaruO/PremiereTSMarker/assets/91080250/27bc2701-c2bb-4535-bc74-4313444a417b)
 
 
-## 次にExtendScriptを実行します。
+## ExtendScriptを実行する
 
 ![1](https://github.com/keimaruO/PremiereTSMarker/assets/91080250/4706dcfd-dcd2-4b5a-afa8-dd8284cf1b53)
 
