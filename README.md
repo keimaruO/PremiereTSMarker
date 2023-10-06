@@ -1,9 +1,16 @@
 # PremireTSMarkerとは
 [SukoStamp](https://chromewebstore.google.com/detail/sukostamp/bioancpdekiljihjfibhpadakcnceoeg)などで作られた主にYouTube用のタイムスタンプをPremiere Proにマーカーとして表示させる
 
+## 使用例
+
+
+https://github.com/keimaruO/PremiereTSMarker/assets/91080250/ef9b4c66-3056-4410-9be0-441df46a5231
+
+
+
 # ExtendScript Debugger のセットアップ方法
 
-[Visual Studio Code](https://code.visualstudio.com/)を使ってプログラムを実行していきます。
+[Visual Studio Code](https://code.visualstudio.com/)を使ってプログラムを実行していきます。インストールしてない方はインスト！ [VScodeを日本語化する方法](https://www.javadrive.jp/vscode/install/index4.html)
 
 Visual Studio Codeの拡張機能、[ExtendScript Debugger](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug)をインストール。
 
